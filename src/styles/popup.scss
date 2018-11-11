@@ -1,6 +1,7 @@
 @import "modules/reset";
 @import "modules/variables";
 @import "modules/layout";
+@import "modules/utilities";
 
 body, html {
   padding: 0;
@@ -9,7 +10,8 @@ body, html {
 
 #app {
   padding: 20px 20px;
-  background: $white;
+  background: $pink;
+  color:#fff;
 }
 
 footer {
@@ -85,4 +87,21 @@ footer {
   border-radius: 2px;
   outline: none;
   font-size: 1em;
+}
+
+#projects {
+  position:relative;
+  .success {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba($pink,.85);
+    display: grid;
+    p {
+      margin:auto;
+      font-weight: bold;
+    }
+  }
 }

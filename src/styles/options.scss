@@ -33,6 +33,31 @@
       margin: 3px 5px;
     }
   }
+
+}
+
+.content {
+  display:grid;
+  grid-gap:3em;
+  grid-template-columns: 3fr 2fr;
+  .panel {
+    
+  }
 }
 
 
+textarea {
+  background: transparent;
+  border:0;
+  border-bottom:1px #fff solid;
+  color:#fff;
+  margin-bottom: 1em;
+  display: block;
+}
+
+table{
+  width:100%;
+}
+td {
+  border-bottom:1px solid lighten($pink, 15%);
+}
