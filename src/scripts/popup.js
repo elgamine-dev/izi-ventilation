@@ -46,7 +46,8 @@ var projectsReporter = function () {
       for(let i = 0; i < this.data.projects.length; i++) {
         const opt = document.createElement('option');
         opt.value = this.data.projects[i];
-        opt.innerHTML = this.data.projects[i];
+        const txt = document.createTextNode(this.data.projects[i])
+        opt.appendChild(txt);
         this.inputs.project_name.appendChild(opt)
       }
       this.inputs.project_name.appendChild(document.createElement('option'))
@@ -56,7 +57,10 @@ var projectsReporter = function () {
       const projects = document.querySelector('#projects')
       const msg = document.createElement('div')
       msg.classList.add('success')
-      msg.innerHTML = `<p>C'est noté !</p>`
+      const p = document.createElement('p')
+      const txt = document.createTextNode('C\'est noté !')
+      p.appendChild(txt)
+      mag.appendChild(p)
       projects.appendChild(msg)
     }
   }

@@ -1,14 +1,14 @@
 {
   "appName": {
-    "message": "Ext Starter",
+    "message": "Izi Ventilation",
     "description": "The name of the extension."
   },
   "appDescription": {
-    "message": "Boilerplate for building cross browser extensions",
+    "message": "Un outil pour une ventilation plus facile",
     "description": "The description of the extension."
   },
   "btnTooltip": {
-    "message": "Ext Starter",
+    "message": "Venitlation",
     "description": "Tooltip for the button."
   }
 }

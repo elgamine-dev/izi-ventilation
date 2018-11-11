@@ -31,7 +31,8 @@ function bootstrap() {
   getProjects( function(data) {
     const projects = data.projects
     if (!Array.isArray(projects) || projects.length === 0) {
-      return document.querySelector("#msg").innerHTML += "Aucun projet"
+      const txt = document.createTextNode("Aucune projet&nbsp;")
+      return document.querySelector("#msg").appendChild(txt) 
     }
   });
 
@@ -43,16 +44,20 @@ function bootstrap() {
     const entries = data.entries
     
     const tbody = document.querySelector('tbody#entries')
-    tbody.innerHTML = ""
+    while(tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild)
+    }
     
     if (!Array.isArray(entries) || entries.length === 0) {
-      return document.querySelector("#msg").innerHTML += "Aucune entree"
+      const txt = document.createTextNode("Aucune entree&nbsp;")
+      return document.querySelector("#msg").appendChild(txt) 
     }
     for (let i=0; i<entries.length;i++){
       const tr = document.createElement('tr')
       const del = document.createElement('button')
       del.addEventListener('click', removeEntry.bind(null, i))
-      del.innerHTML = '&times';
+      const txt = document.createTextNode("&times;")
+      del.appendChild(txt)
       addTd(tr, del)
       addTd(tr, entries[i].date)
       addTd(tr, entries[i].billed)
@@ -67,7 +72,9 @@ function bootstrap() {
   if (debug) {
     storage.get('projects', function(data){
       console.log('projects', data)
-      document.querySelector('#projects').innerHTML = data.projects.join("\n")
+      const txt = document.createTextNode(data.projects.join("\n"))
+      
+      document.querySelector('#projects').appendChild(txt)
     })
   }
 
@@ -77,7 +84,9 @@ function removeEntry(pos) {
   storage.get('entries', function(data){
     const entries = data.entries
     if (!Array.isArray(entries) || entries.length === 0) {
-      return document.querySelector("#msg").innerHTML += "Aucune entree"
+
+      const txt = document.createTextNode("Aucune entree&nbsp;")
+      return document.querySelector("#msg").appendChild(txt) 
     }
 
     storage.set({entries:[
@@ -91,10 +100,9 @@ function removeEntry(pos) {
 function addTd(tr, value) {
   const td = document.createElement('td')
   if (typeof value === 'string') {
-    td.innerHTML = value
-  } else {
-    td.appendChild(value)
-  }
+      value = document.createTextNode(value)
+  } 
+  td.appendChild(value)
   tr.appendChild(td)
 }
 
