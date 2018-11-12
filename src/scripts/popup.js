@@ -60,7 +60,7 @@ var projectsReporter = function () {
       const p = document.createElement('p')
       const txt = document.createTextNode('C\'est noté !')
       p.appendChild(txt)
-      mag.appendChild(p)
+      msg.appendChild(p)
       projects.appendChild(msg)
     }
   }
