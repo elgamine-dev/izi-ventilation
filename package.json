@@ -1,6 +1,6 @@
 {
   "name": "izi-ventilation",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "From a template for creating cross-browser extensions",
   "scripts": {
     "chrome-build": "cross-env TARGET=chrome gulp",
