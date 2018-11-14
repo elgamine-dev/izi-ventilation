@@ -15,7 +15,7 @@ document.querySelector("#copy").addEventListener('click', function(){
   const shadow = [...content.childNodes].map(row=>{
     row.childNodes[0].remove(); 
     return row.innerText
-  })
+  }).join("")
   navigator.clipboard.writeText(shadow)
   bootstrap()
 })
@@ -54,10 +54,12 @@ function bootstrap() {
     }
     for (let i=0; i<entries.length;i++){
       const tr = document.createElement('tr')
+      
       const del = document.createElement('button')
       del.addEventListener('click', removeEntry.bind(null, i))
-      const txt = document.createTextNode("&times;")
+      const txt = document.createTextNode("×")
       del.appendChild(txt)
+
       addTd(tr, del)
       addTd(tr, entries[i].date)
       addTd(tr, entries[i].billed)
