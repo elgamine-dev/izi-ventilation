@@ -11,18 +11,20 @@ body, html {
 #app {
   padding: 20px 20px;
   background: $pink;
-  color:#fff;
+  color:$white;
 }
 
 footer {
-  color: $text-secondary;
-  text-align: right;
-  font-size: 0.8em;
+  display:flex;
+  justify-content: space-between;
   a {
     outline: none;
     color: lighten($text-secondary, 10%);
+    font-size:14px;
+    text-decoration: underline;
+    font-family: "Ubuntu Condensed", Ubuntu, Helvetica, Arial;
     &:hover {
-      color: $text-secondary;
+      color: $white;
     }
   }
 }
@@ -30,7 +32,7 @@ footer {
 .popup-content {
   min-width: 220px;
   min-height: 100px;
-  max-width: 350px;
+ // max-width: 350px;
 }
 
 .app-name {
@@ -104,4 +106,54 @@ footer {
       font-weight: bold;
     }
   }
+}
+
+.form {
+
+  &-top {
+    min-width: 450px;
+    display: grid;
+    grid-template-columns: 33px min-content 107px min-content min-content;
+  }
+  &-bottom {
+    display:grid;
+    grid-template-columns: repeat(2, min-content) 1fr;
+  }
+
+  p {
+    color: $pinkish;
+    font-family: "Ubuntu Condensed", Ubuntu, Helvetica, Arial;
+    margin:0;
+    padding-left: 1ch;
+    padding-right: 1ch;
+  }
+  label {
+    color:$pinkish;
+    font-family: "Ubuntu Condensed", Ubuntu, Helvetica, Arial;
+    margin-right:1ch;
+  }
+  .field.comment {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input, select {
+  font-family: Ubuntu, Helvetica, Arial;
+  padding-left:5px;
+  padding-right:5px;
+  text-align: center;
+}
+
+input[type=date] {
+  padding-right: 0;
+}
+
+option {
+  background-color: $pink;
+  color:$pinkish;
 }

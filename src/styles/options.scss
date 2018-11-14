@@ -49,8 +49,8 @@
 textarea {
   background: transparent;
   border:0;
-  border-bottom:1px #fff solid;
-  color:#fff;
+  border-bottom:1px $pinkish solid;
+  color:$white;
   margin-bottom: 1em;
   display: block;
 }
@@ -60,4 +60,14 @@ table{
 }
 td {
   border-bottom:1px solid lighten($pink, 15%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color:$pinkish;
 }

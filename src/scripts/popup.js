@@ -1,5 +1,6 @@
 import ext from "./utils/ext";
 import storage from "./utils/storage";
+//import "./utils/stretchy"
 
 var projectsReporter = function () {
 
@@ -18,9 +19,9 @@ var projectsReporter = function () {
     init(projects) {
       this.data.projects = projects
       this.setDefaults()
-      this.inputs.submit.addEventListener('click', this.getForm.bind(this))
+      this.inputs.submit.addEventListener('click', this.onAdd.bind(this))
     },
-    getForm() {
+    onAdd() {
       const data = {
         project_name: this.inputs.project_name.value,
         time_spent: this.inputs.time_spent.value,
@@ -28,7 +29,6 @@ var projectsReporter = function () {
         billed: this.inputs.billed.checked && 'Temps facturé' || 'Temps non facturé',
         date: this.inputs.date.value,
       }
-      console.log(data)
       storage.get('entries', (ent)=>{
         const altered = 
         Array.isArray(ent.entries) 
@@ -62,6 +62,7 @@ var projectsReporter = function () {
       p.appendChild(txt)
       msg.appendChild(p)
       projects.appendChild(msg)
+      p.classList.add('bounceIn')
     }
   }
 

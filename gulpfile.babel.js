@@ -99,11 +99,14 @@ gulp.task("manifest", () => {
 // DIST
 // -----------------
 gulp.task('dist', (cb) => {
-  $.runSequence('build', 'zip', cb)
+  $.runSequence('build', 'zip', 'source', cb)
 });
 
 gulp.task('zip', () => {
   return pipe(`./build/${target}/**/*`, $.zip(`${target}.zip`), './dist')
+})
+gulp.task('source', () => {
+  return pipe(`./src/**/*`, $.zip(`source.zip`), './dist')
 })
 
 

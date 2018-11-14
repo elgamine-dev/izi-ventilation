@@ -6,35 +6,46 @@
   </head>
   <body class="page-popup">
     <div id="app" class="popup-content">
-      <div id="projects">
-        <div class="field">
-          <select name="project_name" id=""></select>
-        </div>
-        <div class="field">
-          <label>
-            <input type="checkbox" name="billed" checked="checked"> Facturé
-          </label>
-        </div>
-        <div class="field">
-          <input type="number" step="any" name="time_spent">
-        </div>
-        <div class="field">
-          <input type="date" name="date">
-        </div>
-        <div class="field">
-          <input type="text" name="comment" placeholder="commentaire">
-        </div>
-        <div class="field actions">
-          <button type="submit" name="add">Ajouter</button>
-        </div>
+      <div id="projects" class="form">
+        <section class="form-top">
+          <div class="field">
+            <input type="number" step="any" name="time_spent">
+          </div>
+          <p>heures&nbsp;passées&nbsp;le</p>
+          <div class="field">
+            <input type="date" name="date">
+          </div>
+          <p>sur</p>
+          <div class="field">
+            <select name="project_name" id=""></select>
+          </div>
+        </section>
+
+        <section class="form-bottom">
+          <div class="field">
+            <input id="billed" class="itoggle" type="checkbox" name="billed" checked="checked">
+            <label for="billed">&nbsp;</label>
+          </div>
+          <div>
+            <label for="billed">
+              facturé
+            </label>
+          </div>
+          <div class="field comment">
+            <input type="text" name="comment" placeholder="commentaire">
+          </div>
+
+        </section>
       </div>
 
       <footer>
-        <p>
-          <small>
-            <a href="#" class="js-options">Options</a>
-          </small>
-        </p>
+        <div class="options">
+          <a href="#" class="js-options">Config / Export</a>
+        </div>
+        <div class="field actions">
+          <button type="submit" name="add">Ajouter entrée</button>
+        </div>
+
       </footer>
     </div>
     <script src="scripts/popup.js"></script>
